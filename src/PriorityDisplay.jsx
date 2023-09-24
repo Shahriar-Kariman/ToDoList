@@ -16,9 +16,11 @@ export default function PriorityDisplay({priority}){
         src={images[p]}
         style={
             {
-                height:'100%'
+                height:'100%',
+                width: '146px'
             }
         }
+        alt='Task Priority'
         />
     );
 }

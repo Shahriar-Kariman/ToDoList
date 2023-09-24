@@ -9,11 +9,11 @@ import { useState } from 'react';
 
 export default function PriorityDisplay({priority}){
     const images = [Ice,Candel,Fire,Fireworks,Explosion];
-    const [p,setP] = useState(priority);
+    
     return (
         <img
         className='priority-img'
-        src={images[p]}
+        src={images[priority]}
         style={
             {
                 height:'100%',

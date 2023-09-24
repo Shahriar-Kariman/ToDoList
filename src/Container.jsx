@@ -9,10 +9,6 @@ import addIcon from './assets/plus-svgrepo-com.svg'
 import explosionIcon from './assets/nuclear-explosion.png'
 import { Html, ScrollControls, Scroll } from '@react-three/drei'
 
-async function addItem(db, id, description, startDate, priority, done){
-    await db.table('ToDoItem').add({id,description,startDate, priority, done});
-}
-
 export default function Container(){
     const [newDesc, setNewDesc] = useState("")
     const [newPriority, setNewPriority] = useState(4)
@@ -39,8 +35,20 @@ export default function Container(){
         setItems(allItems??[])
     },[allItems])
 
+    const handleAddItem = async (id, description, startDate, priority, done)=>{
+        await db.ToDoItem.add({id,description,startDate, priority, done});
+    }
+
     const handleItemDelete = async (itemId)=>{
         await db.ToDoItem.delete(itemId);
+    }
+
+    const handleChangePriority = async (itemId, changedPriority)=>{
+        await db.ToDoItem.update(itemId,{priority: changedPriority}).then(
+            (updated)=>{
+                if(!updated) console.log("couldent updated item number ",itemId)
+            }
+        );
     }
 
     return (
@@ -64,13 +72,14 @@ export default function Container(){
                         ()=>{
                             if(newDesc==="") return;
                             const date = new Date();
-                            addItem(db,idCount,newDesc,date,newPriority,false)
+                            handleAddItem(idCount,newDesc,date,newPriority,false)
                             setIdCount(idCount+1)
                             setNewDesc("")
                         }
                         }>
                         </img>
                         <Popup
+                        modal
                         className='priority-popup'
                         trigger={<img className='explosion' src={explosionIcon} alt='explosion' />}
                         position={'bottom center'}
@@ -103,6 +112,7 @@ export default function Container(){
                             priority={item.priority}
                             done={item.done}
                             handleItemDelete={handleItemDelete}
+                            handleChangePriority={handleChangePriority}
                         />
                         )
                     })

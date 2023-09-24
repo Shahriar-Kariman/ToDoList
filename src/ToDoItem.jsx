@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react"
 import Popup from 'reactjs-popup'
 import CircularSlider from '@fseehawer/react-circular-slider'
 import PriorityDisplay from "./PriorityDisplay"
-import Reset from "./assets/refresh-cw-alt-3-svgrepo-com.svg"
+// import Reset from "./assets/refresh-cw-alt-3-svgrepo-com.svg"
 import ChangePriority from "./assets/medium-priority-svgrepo-com.svg"
 import Delete from "./assets/delete-svgrepo-com.svg"
 // import Timer from "./Timer"
@@ -33,8 +33,11 @@ export default function ToDoItem({id, description, startDate, priority, handleIt
                 <p>Started {days} days ago at {startDate_.getHours()}:{startDate_.getMinutes()}</p>
             </div>
             <div className="center">
-                <img src={Delete} onClick={()=>{handleItemDelete(id)}} />
-                <img src={Reset} />
+                <img 
+                src={Delete} 
+                onClick={()=>{handleItemDelete(id)}} 
+                />
+                {/* <img src={Reset} /> */}
                 <Popup
                 modal
                 className='priority-popup'

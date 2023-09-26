@@ -87,7 +87,7 @@ canvas{
 }
 
 .left p {
-  color: red;
+  color: rgb(255, 196, 0);
   margin-top: 5px;
   margin-left: 20px;
   font-size: small;

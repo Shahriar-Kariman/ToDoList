@@ -5,7 +5,6 @@ import Candel from './assets/candle.jpg';
 import Fire from './assets/fire.jpg';
 import Fireworks from './assets/fireworks.jpg';
 import Explosion from './assets/explosion.jpg';
-import { useState } from 'react';
 
 export default function PriorityDisplay({priority}){
     const images = [Ice,Candel,Fire,Fireworks,Explosion];

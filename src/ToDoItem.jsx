@@ -5,7 +5,6 @@ import { useEffect, useState, useRef } from "react"
 import Popup from 'reactjs-popup'
 import CircularSlider from '@fseehawer/react-circular-slider'
 import PriorityDisplay from "./PriorityDisplay"
-// import Reset from "./assets/refresh-cw-alt-3-svgrepo-com.svg"
 import ChangePriority from "./assets/medium-priority-svgrepo-com.svg"
 import Delete from "./assets/delete-svgrepo-com.svg"
 // import Timer from "./Timer"

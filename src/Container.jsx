@@ -61,6 +61,12 @@ export default function Container(){
                     className='reset-button'
                     src={resetIcon} 
                     alt="reset" 
+                    onClick={()=>{
+                        items.map((item)=>{
+                            handleItemDelete(item.id)
+                        })
+                        setIdCount(1)
+                    }}
                     />
                 </Html>
                 <Html position={[-1,3.2,0]}>

@@ -28,6 +28,7 @@ export default function Background(){
     return(
         <>
             <Container />
+            {/* This is the part you should put suspense and the loader */}
             <pointLight position={[0,1,1]} intensity={1} />
             <ambientLight intensity={2} />
             <directionalLight intensity={2} />

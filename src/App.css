@@ -70,6 +70,7 @@ canvas{
 
 .reset-button{
   height: 42px;
+  cursor: pointer;
 }
 
 .item{

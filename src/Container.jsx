@@ -6,6 +6,7 @@ import Dexie from 'dexie'
 import { useLiveQuery } from "dexie-react-hooks"
 import CircularSlider from '@fseehawer/react-circular-slider'
 import addIcon from './assets/plus-svgrepo-com.svg'
+import resetIcon from './assets/reset-svgrepo-com.svg'
 import explosionIcon from './assets/nuclear-explosion.png'
 import { Html, ScrollControls, Scroll } from '@react-three/drei'
 
@@ -55,8 +56,19 @@ export default function Container(){
         <>
         <ScrollControls pages={1} damping={0.1} >
             <Scroll >
+                <Html position={[2,3,1]} >
+                    <img 
+                    className='reset-button'
+                    src={resetIcon} 
+                    alt="reset" 
+                    />
+                </Html>
                 <Html position={[-1,3.2,0]}>
-                    <h1 style={{width:'300px',cursor:'auto',userSelect:'none'}}>To Do List</h1>
+                    <h1 
+                    style={
+                        {width:'300px',cursor:'auto',userSelect:'none'}
+                    }
+                    >To Do List</h1>
                 </Html>
                 <Html position={[-2,2,0]} style={{cursor:"auto"}} >
                     <form className='add-form'>

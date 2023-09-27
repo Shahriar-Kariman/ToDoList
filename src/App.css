@@ -68,6 +68,10 @@ canvas{
   background: transparent;
 }
 
+.reset-button{
+  height: 42px;
+}
+
 .item{
   width: 460px;
   height: 200px;
